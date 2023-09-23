@@ -4,7 +4,7 @@ public class Main {
         Scanner inScanner = new Scanner(System.in);
         System.out.println("Enter size:");
         int size = inScanner.nextInt();
-        if (size <= 0 || size >= 50){
+        while (size <= 0 || size >= 50){
             System.out.println("Please enter a number between 1-50. Enter size:");
             size = inScanner.nextInt();
         }
@@ -20,7 +20,7 @@ public class Main {
         while (moreTriangles.equals("y")){
             System.out.println("Enter size:");
             size = inScanner.nextInt();
-            if (size <= 0 || size >= 50){
+            while (size <= 0 || size >= 50){
                 System.out.println("Please enter a number between 1-50. Enter size:");
                 size = inScanner.nextInt();
             }
@@ -28,6 +28,8 @@ public class Main {
             charFill = inScanner.next().charAt(0);
             height = size;
             makeTriangle(height,size,charFill);
+            System.out.println("Wanna make another triangle? (y/n)");
+            moreTriangles = inScanner.next();
         } if (moreTriangles.equals("n")) {
             System.out.println("K. Bye.");
         }
